@@ -1,15 +1,4 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev",
-  "git": {
-    "deploymentEnabled": {
-      "main": true
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
@@ -27,34 +16,7 @@
       ]
     },
     {
-      "source": "/(.*\\.js)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.css)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(ico|png|jpg|jpeg|gif|svg))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(woff|woff2|ttf|eot))",
+      "source": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
       "headers": [
         {
           "key": "Cache-Control",
@@ -62,10 +24,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "app/api/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  ]
 }
