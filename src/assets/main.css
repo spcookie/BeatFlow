@@ -1,0 +1,111 @@
+@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 马卡龙配色方案自定义样式 */
+:root {
+  --color-primary: #FF9AA2;
+  --color-secondary: #FFB7B2;
+  --color-accent: #FFDAC1;
+  --color-background: #E2F0CB;
+  --color-surface: #B5EAD7;
+  --color-text: #2D3748;
+  --color-text-light: #718096;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* BEM命名规范的组件样式 */
+.metronome {
+  &__container {
+    @apply bg-white rounded-card shadow-none border border-gray-200;
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  &__header {
+    @apply text-center mb-8;
+  }
+
+  &__title {
+    @apply text-3xl font-bold text-text mb-2;
+  }
+
+  &__subtitle {
+    @apply text-text-light;
+  }
+
+  &__controls {
+    @apply space-y-6;
+  }
+
+  &__section {
+    @apply bg-surface rounded-card p-4;
+  }
+
+  &__section-title {
+    @apply text-lg font-semibold text-text mb-3;
+  }
+}
+
+/* 扁平化按钮样式 */
+.btn {
+  @apply px-6 py-3 rounded-card font-medium transition-colors duration-200 border-none;
+  
+  &--primary {
+    background-color: var(--color-primary);
+    color: white;
+    
+    &:hover {
+      background-color: #ff8a94;
+    }
+  }
+  
+  &--secondary {
+    background-color: var(--color-secondary);
+    color: white;
+    
+    &:hover {
+      background-color: #ffa8a8;
+    }
+  }
+}
+
+/* 全局按钮和图标优化 */
+.ant-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  
+  .anticon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* 确保所有文本都有良好的行高 */
+* {
+  line-height: 1.5;
+}
+
+button, .ant-btn {
+  line-height: 1 !important;
+}
