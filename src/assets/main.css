@@ -22,6 +22,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 全局隐藏滚动条 */
+* {
+  /* 隐藏 Webkit 浏览器的滚动条 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 和 Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* 确保html和body也隐藏滚动条 */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
 #app {
   min-height: 100vh;
   display: flex;
