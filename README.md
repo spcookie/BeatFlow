@@ -1,10 +1,10 @@
-# 🧘‍♀️ BeatFlow - 瑜伽节拍器
+# 🎵 BeatFlow - 姗姗节拍器
 
 <div align="center">
 
 ![BeatFlow Logo](./src/assets/logo.svg)
 
-**专为瑜伽练习设计的智能节拍器应用**
+**姗姗专属的智能节拍器应用**
 
 [![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -19,8 +19,8 @@
 
 ## ✨ 特色功能
 
-- 🎵 **精准节拍控制** - 支持30-200 BPM范围，满足不同瑜伽练习需求
-- 🎼 **多种拍号支持** - 2/4、3/4、4/4拍号，适配各种瑜伽流派
+- 🎵 **精准节拍控制** - 支持30-200 BPM范围，满足不同练习需求
+- 🎼 **多种拍号支持** - 2/4、3/4、4/4拍号，适配各种使用场景
 - 🔊 **丰富音效选择** - 多种节拍音效，营造专业练习氛围
 - ⏱️ **智能计时器** - 精确计时功能，帮助掌控练习时长
 - 📱 **响应式设计** - 完美适配手机、平板、电脑等设备
@@ -66,16 +66,16 @@ npm run lint
 1. **设置BPM** - 使用滑块调整节拍速度（30-200 BPM）
 2. **选择拍号** - 根据练习需要选择合适的拍号
 3. **音效设置** - 选择喜欢的节拍音效
-4. **开始练习** - 点击播放按钮开始瑜伽练习
+4. **开始练习** - 点击播放按钮开始练习
 
-### 瑜伽练习建议
+### 使用建议
 
 | 练习类型 | 推荐BPM | 拍号 | 说明 |
 |---------|---------|------|------|
-| 🧘 冥想练习 | 60-80 | 4/4 | 缓慢深呼吸，放松身心 |
-| 🌊 流瑜伽 | 80-120 | 4/4 | 流畅连贯的体式转换 |
-| 💪 力量瑜伽 | 100-140 | 4/4 | 增强肌肉力量和耐力 |
-| 🌅 晨练瑜伽 | 70-100 | 3/4 | 温和唤醒身体活力 |
+| 🧘 专注练习 | 60-80 | 4/4 | 缓慢节奏，放松身心 |
+| ⚡ 快节奏练习 | 80-120 | 4/4 | 流畅连贯的节奏练习 |
+| 💪 强化练习 | 100-140 | 4/4 | 增强节奏感和专注力 |
+| 🌅 基础练习 | 70-100 | 3/4 | 温和的节奏训练 |
 
 ## 🏗️ 技术架构
 
@@ -175,7 +175,7 @@ BeatFlow/
 
 <div align="center">
 
-**用心打造，专注瑜伽练习体验** 🧘‍♀️✨
+**用心打造，专注节拍练习体验** 🎵✨
 
 [🌟 给个Star](https://github.com/spcookie/BeatFlow) | [🐛 报告问题](https://github.com/spcookie/BeatFlow/issues) | [💡 功能建议](https://github.com/spcookie/BeatFlow/issues)
 

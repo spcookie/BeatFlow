@@ -3,14 +3,14 @@
     <div class="about__container">
       <header class="about__header">
         <h1 class="about__title">关于 BeatFlow</h1>
-        <p class="about__subtitle">专为运动瑜伽设计的节拍器</p>
+        <p class="about__subtitle">姗姗专属节拍器</p>
       </header>
 
       <div class="about__content">
         <section class="about__section">
           <h2 class="about__section-title">为什么选择 BeatFlow？</h2>
           <div class="about__intro">
-            <p>BeatFlow 是专门为运动瑜伽练习者设计的节拍器应用。无论您是瑜伽初学者还是资深练习者，BeatFlow 都能帮助您建立稳定的呼吸节奏，提升练习效果。</p>
+            <p>BeatFlow 是姗姗的专属节拍器应用。无论是练习、学习还是日常活动，BeatFlow 都能帮助建立稳定的节奏感，提升专注力和效率。</p>
           </div>
         </section>
 
@@ -18,16 +18,16 @@
           <h2 class="about__section-title">功能特色</h2>
           <ul class="about__feature-list">
             <li class="about__feature-item">
-              <strong>呼吸节奏控制：</strong>精准的节拍控制，帮助建立稳定的呼吸模式
+              <strong>节奏控制：</strong>精准的节拍控制，帮助建立稳定的节奏感
             </li>
             <li class="about__feature-item">
-              <strong>多种练习模式：</strong>支持不同的拍号设置，适应各种瑜伽流派
+              <strong>多种模式：</strong>支持不同的拍号设置，适应各种使用场景
             </li>
             <li class="about__feature-item">
-              <strong>视觉引导：</strong>清晰的节拍指示器，帮助您保持专注
+              <strong>视觉引导：</strong>清晰的节拍指示器，帮助保持专注
             </li>
             <li class="about__feature-item">
-              <strong>练习记录：</strong>自动记录练习时间，追踪您的瑜伽之旅
+              <strong>使用记录：</strong>自动记录使用时间，追踪练习进度
             </li>
             <li class="about__feature-item">
               <strong>多设备支持：</strong>手机、平板、电脑都能完美使用
@@ -39,41 +39,41 @@
           <h2 class="about__section-title">如何使用</h2>
           <div class="about__instructions">
             <div class="about__instruction-item">
-              <h3>1. 调整呼吸节奏</h3>
-              <p>根据您的练习需要调整BPM速度。初学者建议从较慢的节奏开始（60-80 BPM）。</p>
+              <h3>1. 调整节奏速度</h3>
+              <p>根据需要调整BPM速度。建议从较慢的节奏开始（60-80 BPM）。</p>
             </div>
             <div class="about__instruction-item">
-              <h3>2. 选择练习模式</h3>
-              <p>选择适合的拍号：4/4适合基础练习，3/4适合流瑜伽，6/8适合冥想练习。</p>
+              <h3>2. 选择拍号模式</h3>
+              <p>选择适合的拍号：4/4适合基础练习，3/4适合特殊节奏，6/8适合复合节拍。</p>
             </div>
             <div class="about__instruction-item">
-              <h3>3. 开始练习</h3>
-              <p>点击播放按钮，跟随节拍调整呼吸，让身心达到和谐统一。</p>
+              <h3>3. 开始使用</h3>
+              <p>点击播放按钮，跟随节拍进行练习，保持专注和节奏感。</p>
             </div>
           </div>
         </section>
 
         <section class="about__section">
-          <h2 class="about__section-title">瑜伽练习建议</h2>
+          <h2 class="about__section-title">使用建议</h2>
           <div class="about__yoga-tips">
             <div class="about__tip-item">
-              <h3>🧘‍♀️ 初学者</h3>
-              <p>建议使用60-80 BPM的慢节奏，专注于建立稳定的呼吸模式。</p>
+              <h3>🎵 基础练习</h3>
+              <p>建议使用60-80 BPM的慢节奏，专注于建立稳定的节奏感。</p>
             </div>
             <div class="about__tip-item">
-              <h3>🌊 流瑜伽</h3>
-              <p>可以使用80-120 BPM的中等节奏，配合动作的流畅转换。</p>
+              <h3>⚡ 快节奏练习</h3>
+              <p>可以使用80-120 BPM的中等节奏，适合动态练习。</p>
             </div>
             <div class="about__tip-item">
-              <h3>🕯️ 冥想练习</h3>
-              <p>使用40-60 BPM的缓慢节奏，帮助深度放松和内观。</p>
+              <h3>🧘 专注练习</h3>
+              <p>使用40-60 BPM的缓慢节奏，帮助深度专注和放松。</p>
             </div>
           </div>
         </section>
       </div>
 
       <footer class="about__footer">
-        <p>&copy; 2024 BeatFlow. 专为瑜伽练习者打造，让每一次呼吸都有节奏。</p>
+        <p>&copy; 2024 BeatFlow. 姗姗专属节拍器，让每一次练习都有节奏。</p>
       </footer>
     </div>
   </div>
