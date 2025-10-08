@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const isMenuOpen = ref(false)
+const isNavVisible = ref(true)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -11,11 +12,24 @@ const toggleMenu = () => {
 const closeMenu = () => {
   isMenuOpen.value = false
 }
+
+const handleScroll = () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  isNavVisible.value = scrollTop <= 50 // 滚动超过50px时隐藏导航栏
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
   <div id="app">
-    <nav class="app-nav">
+    <nav class="app-nav" :class="{ 'app-nav--hidden': !isNavVisible }">
       <div class="app-nav__container">
         <div class="app-nav__dropdown">
           <button 
@@ -87,6 +101,15 @@ const closeMenu = () => {
 
 .app-nav {
   @apply fixed top-0 left-0 z-50;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+
+  &--hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
 
   &__container {
     @apply p-4;
@@ -154,7 +177,6 @@ const closeMenu = () => {
 
     &.router-link-active {
       color: var(--color-primary);
-      background-color: var(--color-surface);
       font-weight: 600;
     }
 
