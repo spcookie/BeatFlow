@@ -3,66 +3,77 @@
     <div class="about__container">
       <header class="about__header">
         <h1 class="about__title">关于 BeatFlow</h1>
-        <p class="about__subtitle">专业的在线节拍器应用</p>
+        <p class="about__subtitle">专为运动瑜伽设计的节拍器</p>
       </header>
 
       <div class="about__content">
         <section class="about__section">
+          <h2 class="about__section-title">为什么选择 BeatFlow？</h2>
+          <div class="about__intro">
+            <p>BeatFlow 是专门为运动瑜伽练习者设计的节拍器应用。无论您是瑜伽初学者还是资深练习者，BeatFlow 都能帮助您建立稳定的呼吸节奏，提升练习效果。</p>
+          </div>
+        </section>
+
+        <section class="about__section">
           <h2 class="about__section-title">功能特色</h2>
           <ul class="about__feature-list">
             <li class="about__feature-item">
-              <strong>精准节拍：</strong>高精度的节拍控制，支持30-300 BPM范围
+              <strong>呼吸节奏控制：</strong>精准的节拍控制，帮助建立稳定的呼吸模式
             </li>
             <li class="about__feature-item">
-              <strong>多种拍号：</strong>支持常见的拍号设置（2/4, 3/4, 4/4, 6/8等）
+              <strong>多种练习模式：</strong>支持不同的拍号设置，适应各种瑜伽流派
             </li>
             <li class="about__feature-item">
-              <strong>视觉指示：</strong>清晰的节拍指示器和当前拍子显示
+              <strong>视觉引导：</strong>清晰的节拍指示器，帮助您保持专注
             </li>
             <li class="about__feature-item">
-              <strong>练习计时：</strong>自动记录练习时间，帮助您跟踪练习进度
+              <strong>练习记录：</strong>自动记录练习时间，追踪您的瑜伽之旅
             </li>
             <li class="about__feature-item">
-              <strong>响应式设计：</strong>完美适配各种设备屏幕
+              <strong>多设备支持：</strong>手机、平板、电脑都能完美使用
             </li>
           </ul>
         </section>
 
         <section class="about__section">
-          <h2 class="about__section-title">使用说明</h2>
+          <h2 class="about__section-title">如何使用</h2>
           <div class="about__instructions">
             <div class="about__instruction-item">
-              <h3>1. 设置BPM</h3>
-              <p>使用滑块或按钮调整节拍速度，或选择预设的常用速度。</p>
+              <h3>1. 调整呼吸节奏</h3>
+              <p>根据您的练习需要调整BPM速度。初学者建议从较慢的节奏开始（60-80 BPM）。</p>
             </div>
             <div class="about__instruction-item">
-              <h3>2. 选择拍号</h3>
-              <p>根据您的音乐需要选择合适的拍号。</p>
+              <h3>2. 选择练习模式</h3>
+              <p>选择适合的拍号：4/4适合基础练习，3/4适合流瑜伽，6/8适合冥想练习。</p>
             </div>
             <div class="about__instruction-item">
               <h3>3. 开始练习</h3>
-              <p>点击播放按钮开始节拍器，跟随节拍进行练习。</p>
+              <p>点击播放按钮，跟随节拍调整呼吸，让身心达到和谐统一。</p>
             </div>
           </div>
         </section>
 
         <section class="about__section">
-          <h2 class="about__section-title">技术信息</h2>
-          <div class="about__tech-info">
-            <p>BeatFlow 使用现代Web技术构建：</p>
-            <ul class="about__tech-list">
-              <li>Vue 3 + TypeScript</li>
-              <li>Ant Design Vue</li>
-              <li>Tailwind CSS</li>
-              <li>Pinia 状态管理</li>
-              <li>Vite 构建工具</li>
-            </ul>
+          <h2 class="about__section-title">瑜伽练习建议</h2>
+          <div class="about__yoga-tips">
+            <div class="about__tip-item">
+              <h3>🧘‍♀️ 初学者</h3>
+              <p>建议使用60-80 BPM的慢节奏，专注于建立稳定的呼吸模式。</p>
+            </div>
+            <div class="about__tip-item">
+              <h3>🌊 流瑜伽</h3>
+              <p>可以使用80-120 BPM的中等节奏，配合动作的流畅转换。</p>
+            </div>
+            <div class="about__tip-item">
+              <h3>🕯️ 冥想练习</h3>
+              <p>使用40-60 BPM的缓慢节奏，帮助深度放松和内观。</p>
+            </div>
           </div>
         </section>
       </div>
 
       <footer class="about__footer">
-        <p>&copy; 2024 BeatFlow. 专为音乐爱好者打造。</p>
+        <p>&copy; 2024 BeatFlow. 专为瑜伽练习者打造，让每一次呼吸都有节奏。</p>
       </footer>
     </div>
   </div>
@@ -127,17 +138,25 @@
     }
   }
 
-  &__tech-info {
+  &__intro {
     p {
-      @apply text-text-light mb-3;
+      @apply text-text-light text-base leading-relaxed;
     }
   }
 
-  &__tech-list {
-    @apply space-y-1;
+  &__yoga-tips {
+    @apply space-y-4;
+  }
 
-    li {
-      @apply text-text-light;
+  &__tip-item {
+    @apply bg-white rounded-lg p-4 border border-gray-100;
+
+    h3 {
+      @apply text-lg font-semibold text-text mb-2 flex items-center;
+    }
+
+    p {
+      @apply text-text-light leading-relaxed;
     }
   }
 

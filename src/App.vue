@@ -29,6 +29,23 @@ const closeMenu = () => {
               <span></span>
             </span>
             <span class="app-nav__toggle-text">BeatFlow</span>
+            <span class="app-nav__logo">
+              <svg width="24" height="24" viewBox="0 0 32 32">
+                <circle cx="16" cy="16" r="15" fill="#ff9aa2"/>
+                <g transform="translate(16, 16)" fill="white">
+                  <circle cx="0" cy="-6" r="2"/>
+                  <ellipse cx="0" cy="0" rx="1.5" ry="6"/>
+                  <ellipse cx="-4" cy="-2" rx="1" ry="4" transform="rotate(-45)"/>
+                  <ellipse cx="4" cy="-2" rx="1" ry="4" transform="rotate(45)"/>
+                  <ellipse cx="-2" cy="6" rx="1" ry="4" transform="rotate(-20)"/>
+                  <ellipse cx="2" cy="6" rx="1" ry="4" transform="rotate(20)"/>
+                </g>
+                <g transform="translate(16, 16)" stroke="white" stroke-width="1" fill="white">
+                  <line x1="0" y1="-12" x2="0" y2="-4"/>
+                  <circle cx="0" cy="-11" r="1.5"/>
+                </g>
+              </svg>
+            </span>
           </button>
           
           <div 
@@ -85,6 +102,14 @@ const closeMenu = () => {
     &--active {
       @apply shadow-lg;
       background-color: var(--color-surface);
+    }
+  }
+
+  &__logo {
+    @apply flex items-center justify-center;
+    
+    svg {
+      @apply transition-transform duration-200;
     }
   }
 

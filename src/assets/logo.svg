@@ -1,1 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.76 226.69"><path d="M161.096.001l-30.225 52.351L100.647.001H-.005l130.877 226.688L261.749.001z" fill="#41b883"/><path d="M161.096.001l-30.225 52.351L100.647.001H52.346l78.526 136.01L209.398.001z" fill="#34495e"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- 背景圆形 -->
+  <circle cx="100" cy="100" r="95" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+  
+  <!-- 瑜伽人物轮廓 -->
+  <g transform="translate(100, 100)">
+    <!-- 身体 -->
+    <ellipse cx="0" cy="10" rx="8" ry="25" fill="#ff9aa2" opacity="0.8"/>
+    
+    <!-- 头部 -->
+    <circle cx="0" cy="-20" r="8" fill="#ff9aa2" opacity="0.8"/>
+    
+    <!-- 左臂 -->
+    <ellipse cx="-15" cy="0" rx="4" ry="18" fill="#ff9aa2" opacity="0.8" transform="rotate(-30)"/>
+    
+    <!-- 右臂 -->
+    <ellipse cx="15" cy="0" rx="4" ry="18" fill="#ff9aa2" opacity="0.8" transform="rotate(30)"/>
+    
+    <!-- 左腿 -->
+    <ellipse cx="-8" cy="25" rx="4" ry="20" fill="#ff9aa2" opacity="0.8" transform="rotate(-15)"/>
+    
+    <!-- 右腿 -->
+    <ellipse cx="8" cy="25" rx="4" ry="20" fill="#ff9aa2" opacity="0.8" transform="rotate(15)"/>
+  </g>
+  
+  <!-- 节拍器摆锤 -->
+  <g transform="translate(100, 100)">
+    <!-- 摆锤杆 -->
+    <line x1="0" y1="-60" x2="0" y2="-10" stroke="#6c757d" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- 摆锤重量 -->
+    <circle cx="0" cy="-55" r="6" fill="#495057"/>
+    
+    <!-- 节拍器底座 -->
+    <rect x="-25" y="45" width="50" height="15" rx="7" fill="#6c757d"/>
+  </g>
+  
+  <!-- 音波/节拍线条 -->
+  <g stroke="#ff9aa2" stroke-width="2" fill="none" opacity="0.6">
+    <!-- 左侧音波 -->
+    <path d="M 30 80 Q 20 100 30 120" stroke-linecap="round"/>
+    <path d="M 25 75 Q 10 100 25 125" stroke-linecap="round"/>
+    <path d="M 20 70 Q 5 100 20 130" stroke-linecap="round"/>
+    
+    <!-- 右侧音波 -->
+    <path d="M 170 80 Q 180 100 170 120" stroke-linecap="round"/>
+    <path d="M 175 75 Q 190 100 175 125" stroke-linecap="round"/>
+    <path d="M 180 70 Q 195 100 180 130" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 呼吸流动线条 -->
+  <g stroke="#b8e6b8" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M 60 60 Q 100 40 140 60" stroke-linecap="round"/>
+    <path d="M 60 140 Q 100 160 140 140" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 装饰性圆点 -->
+  <g fill="#ff9aa2" opacity="0.4">
+    <circle cx="50" cy="50" r="3"/>
+    <circle cx="150" cy="50" r="3"/>
+    <circle cx="50" cy="150" r="3"/>
+    <circle cx="150" cy="150" r="3"/>
+  </g>
+</svg>
