@@ -7,7 +7,7 @@ export const useMetronomeStore = defineStore('metronome', () => {
   // 节拍器状态
   const isPlaying = ref(false)
   const bpm = ref(BPM_RANGE.DEFAULT)
-  const timeSignature = ref<TimeSignature>(TIME_SIGNATURES_CONST[2]!) // 默认4/4拍
+  const timeSignature = ref<TimeSignature>({ ...TIME_SIGNATURES_CONST[2]! }) // 默认4/4拍，使用深拷贝
   const TIME_SIGNATURES = readonly(ref(TIME_SIGNATURES_CONST))
   const currentBeat = ref(1)
   const elapsedTime = ref(0)
@@ -217,8 +217,15 @@ export const useMetronomeStore = defineStore('metronome', () => {
   
   // 设置拍号
   const setTimeSignature = (newTimeSignature: TimeSignature) => {
-    timeSignature.value = newTimeSignature
-    currentBeat.value = 1
+    // 确保使用TIME_SIGNATURES数组中的引用，避免重复显示
+    const matchedSignature = TIME_SIGNATURES_CONST.find(
+      sig => sig.label === newTimeSignature.label
+    )
+    if (matchedSignature) {
+      // 使用深拷贝，避免污染原始常量
+      timeSignature.value = { ...matchedSignature }
+      currentBeat.value = 1
+    }
   }
   
   // 设置音量
@@ -237,6 +244,20 @@ export const useMetronomeStore = defineStore('metronome', () => {
   
   // 初始化当前时间显示
   currentTime.value = formatCurrentTime()
+  
+  // 初始化拍号，确保使用TIME_SIGNATURES数组中的引用
+  const initTimeSignature = () => {
+    const matchedSignature = TIME_SIGNATURES_CONST.find(
+      sig => sig.label === timeSignature.value.label
+    )
+    if (matchedSignature) {
+      // 使用深拷贝，避免污染原始常量
+      timeSignature.value = { ...matchedSignature }
+    }
+  }
+  
+  // 执行初始化
+  initTimeSignature()
   
   return {
     // 状态

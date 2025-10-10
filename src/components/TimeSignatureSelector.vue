@@ -32,10 +32,9 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { useMetronomeStore } from '@/stores/counter'
-import { TIME_SIGNATURES } from '@/types/metronome'
 
 const metronomeStore = useMetronomeStore()
-const { timeSignature } = storeToRefs(metronomeStore)
+const { timeSignature, TIME_SIGNATURES } = storeToRefs(metronomeStore)
 const { setTimeSignature } = metronomeStore
 </script>
 
