@@ -4,6 +4,7 @@ import BpmController from '@/components/BpmController.vue'
 import TimeSignatureSelector from '@/components/TimeSignatureSelector.vue'
 import TimerDisplay from '@/components/TimerDisplay.vue'
 import SoundOptions from '@/components/SoundOptions.vue'
+import CountdownTimer from '@/components/CountdownTimer.vue'
 </script>
 
 <template>
@@ -12,6 +13,11 @@ import SoundOptions from '@/components/SoundOptions.vue'
       <!-- 计时器显示 -->
       <div class="metronome__section">
         <TimerDisplay />
+      </div>
+
+      <!-- 倒计时器 -->
+      <div class="metronome__section">
+        <CountdownTimer />
       </div>
 
       <!-- 节拍器控制器 -->

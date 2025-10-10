@@ -21,6 +21,13 @@ export const useMetronomeStore = defineStore('metronome', () => {
   const volume = ref(80)
   const selectedSound = ref('click')
   
+  // 倒计时状态
+  const isCountdownRunning = ref(false)
+  const countdownTotalTime = ref(0) // 总倒计时时间（秒）
+  const countdownRemainingTime = ref(0) // 剩余时间（秒）
+  const isCountdownFinished = ref(false)
+  const countdownStartTime = ref<number | null>(null)
+  
   // 音频相关
   let audioContext: AudioContext | null = null
   let intervalId: number | null = null
@@ -240,6 +247,82 @@ export const useMetronomeStore = defineStore('metronome', () => {
     selectedSound.value = soundType
   }
   
+  // 倒计时格式化时间
+  const remainingTimeFormatted = computed(() => {
+    const minutes = Math.floor(countdownRemainingTime.value / 60)
+    const seconds = countdownRemainingTime.value % 60
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+  })
+  
+  // 倒计时方法
+  let countdownIntervalId: number | null = null
+  
+  const startCountdown = (totalSeconds: number) => {
+    countdownTotalTime.value = totalSeconds
+    countdownRemainingTime.value = totalSeconds
+    isCountdownRunning.value = true
+    isCountdownFinished.value = false
+    countdownStartTime.value = Date.now()
+    
+    countdownIntervalId = window.setInterval(() => {
+      if (countdownRemainingTime.value > 0) {
+        countdownRemainingTime.value--
+      } else {
+        // 倒计时结束
+        isCountdownRunning.value = false
+        isCountdownFinished.value = true
+        if (countdownIntervalId) {
+          clearInterval(countdownIntervalId)
+          countdownIntervalId = null
+        }
+        // 播放提示音
+        playCountdownFinishedSound()
+      }
+    }, 1000)
+  }
+  
+  const pauseCountdown = () => {
+    isCountdownRunning.value = false
+    if (countdownIntervalId) {
+      clearInterval(countdownIntervalId)
+      countdownIntervalId = null
+    }
+  }
+  
+  const resetCountdown = () => {
+    isCountdownRunning.value = false
+    isCountdownFinished.value = false
+    countdownRemainingTime.value = countdownTotalTime.value
+    if (countdownIntervalId) {
+      clearInterval(countdownIntervalId)
+      countdownIntervalId = null
+    }
+  }
+  
+  const playCountdownFinishedSound = () => {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)()
+    }
+    
+    // 播放一个更明显的提示音（三次短促的哔声）
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => {
+        const oscillator = audioContext!.createOscillator()
+        const gainNode = audioContext!.createGain()
+        
+        oscillator.connect(gainNode)
+        gainNode.connect(audioContext!.destination)
+        
+        oscillator.frequency.setValueAtTime(800, audioContext!.currentTime)
+        gainNode.gain.setValueAtTime(0, audioContext!.currentTime)
+        gainNode.gain.linearRampToValueAtTime(volume.value / 100 * 0.3, audioContext!.currentTime + 0.01)
+        gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext!.currentTime + 0.2)
+        
+        oscillator.start(audioContext!.currentTime)
+        oscillator.stop(audioContext!.currentTime + 0.2)
+      }, i * 300)
+    }
+  }
 
   
   // 初始化当前时间显示
@@ -271,9 +354,16 @@ export const useMetronomeStore = defineStore('metronome', () => {
     volume,
     selectedSound,
     
+    // 倒计时状态
+    isCountdownRunning,
+    countdownTotalTime,
+    countdownRemainingTime,
+    isCountdownFinished,
+    
     // 计算属性
     beatInterval,
     beatsPerMeasure,
+    remainingTimeFormatted,
     
     // 方法
     start,
@@ -286,6 +376,11 @@ export const useMetronomeStore = defineStore('metronome', () => {
     setVolume,
     setSound,
     
+    // 倒计时方法
+    startCountdown,
+    pauseCountdown,
+    resetCountdown,
+    
     // 常量
     TIME_SIGNATURES,
     BPM_RANGE
@@ -294,6 +389,6 @@ export const useMetronomeStore = defineStore('metronome', () => {
   persist: {
     key: 'metronome-settings',
     storage: localStorage,
-    pick: ['bpm', 'timeSignature', 'volume', 'selectedSound']
+    pick: ['bpm', 'timeSignature', 'volume', 'selectedSound', 'countdownTotalTime', 'countdownRemainingTime']
   }
 })
