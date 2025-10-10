@@ -2,9 +2,11 @@
 
 <div align="center">
 
-![BeatFlow Logo](./src/assets/logo.svg)
+<p align="center">
+  <img src="./src/assets/logo.svg" alt="BeatFlow Logo" width="200">
+</p>
 
-**姗姗专属的智能节拍器应用**
+**姗姗专属的智能节拍器**
 
 [![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -148,15 +150,6 @@ BeatFlow/
 3. 💾 提交更改 (`git commit -m 'Add some AmazingFeature'`)
 4. 📤 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 🔀 创建 Pull Request
-
-## 📝 开发计划
-
-- [ ] 🎵 更多音效选择
-- [ ] 📱 PWA支持，离线使用
-- [ ] 🌍 国际化支持
-- [ ] 📊 练习数据统计
-- [ ] 🎨 主题切换功能
-- [ ] 🔔 练习提醒功能
 
 ## 📄 许可证
 
